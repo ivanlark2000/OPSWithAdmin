@@ -9,9 +9,9 @@
         <!-- Аргумент шаблона form.hidden_tag()создает скрытое поле, содержащее токен,
         используемый для защиты формы от атак CSRF -->
         <p>
-            {{ form.admin_name.label() }}
-            {{ form.admin_name(size=20, id="login", value="name@example.com") }}<br>
-            {% for error in form.admin_name.errors %}
+            {{ form.user.label() }}
+            {{ form.user(size=20, id="login", value="name@example.com") }}<br>
+            {% for error in form.user.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </p>

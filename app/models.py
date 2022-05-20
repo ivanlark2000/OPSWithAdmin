@@ -1,26 +1,38 @@
 from flask_login import UserMixin
-from werkzeug.security import check_password_hash, generate_password_hash
-from app import db, login
+from flask_security import RoleMixin
+from app import db
 
 
-@login.user_loader
-def load_user(id):
-    return Admin.query.get(int(id))
+# Define models
+roles_users = db.Table(
+    'roles_users',
+    db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
+    db.Column('role_id', db.Integer(), db.ForeignKey('role.id'))
+)
 
 
-class Admin(UserMixin, db.Model):
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    admin_name = db.Column(db.String(64), index=True, unique=True)
-    password_hash = db.Column(db.String(128))
+class Role(db.Model, RoleMixin):
+    id = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String(80), unique=True)
+    description = db.Column(db.String(255))
 
-    def __repr__(self):
-        return '<Admin {}>'.format(self.admin_name)
+    def __str__(self):
+        return self.name
 
-    def set_password(self, password):
-        self.password_hash = generate_password_hash(password)
 
-    def check_password(self, password):
-         return check_password_hash(self.password_hash, password)
+class User(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(255))
+    last_name = db.Column(db.String(255))
+    email = db.Column(db.String(255), unique=True)
+    password = db.Column(db.String(255))
+    active = db.Column(db.Boolean())
+    confirmed_at = db.Column(db.DateTime())
+    roles = db.relationship('Role', secondary=roles_users,
+                            backref=db.backref('users', lazy='dynamic'))
+
+    def __str__(self):
+        return self.email
 
 
 class Flat(db.Model):
