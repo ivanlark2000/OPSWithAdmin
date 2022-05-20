@@ -19,7 +19,7 @@ def index():
 @app.route('/admin/')
 @login_required
 def admin():
-    return render_template('admin.html')
+    return render_template('index.html')
 
 
 @app.route('/login/', methods=['GET', 'POST'])

@@ -21,3 +21,13 @@ class Admin(UserMixin, db.Model):
 
     def check_password(self, password):
          return check_password_hash(self.password_hash, password)
+
+
+class Flat(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    address = db.Column(db.String(64), index=True, nullable=False)
+    price = db.Column(db.Integer(), index=True, nullable=False)
+    district = db.Column(db.String(64), index=True, nullable=False)
+
+    def __repr__(self):
+        return '<Flat {}>'.format(self.address)
