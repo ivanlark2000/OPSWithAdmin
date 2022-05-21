@@ -2,7 +2,6 @@ from flask_login import UserMixin
 from flask_security import RoleMixin
 from app import db
 
-
 # Define models
 roles_users = db.Table(
     'roles_users',

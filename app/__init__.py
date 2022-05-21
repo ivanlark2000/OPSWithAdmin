@@ -22,7 +22,7 @@ user_datastore = SQLAlchemyUserDatastore(db, User, Role)
 security = Security(app, user_datastore)
 
 from app.views import MyModelView
-from app import routes, views
+from app import views
 
 # Create admin
 admin = flask_admin.Admin(
@@ -32,14 +32,13 @@ admin = flask_admin.Admin(
     template_mode='bootstrap3',
 )
 
-
 # Add model views
 admin.add_view(MyModelView(Role, db.session))
 admin.add_view(MyModelView(User, db.session))
 admin.add_view(MyModelView(Flat, db.session))
 
+
 # define a context processor for merging flask-admin's template context into the
-# flask-security views.
 @security.context_processor
 def security_context_processor():
     return dict(
