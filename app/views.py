@@ -4,7 +4,6 @@ from flask_security import login_required, logout_user
 
 
 @app.route('/')
-@login_required
 def home():
     return render_template('index.html')
 
