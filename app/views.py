@@ -1,4 +1,4 @@
-from app import app
+from app import app, security
 from flask import render_template, redirect, url_for
 from flask_security import login_required, logout_user
 
@@ -12,3 +12,4 @@ def home():
 def logout():
     logout_user()
     return redirect(url_for('index'))
+
