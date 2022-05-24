@@ -1,6 +1,6 @@
-from app import app, security
+from app import app
 from flask import render_template, redirect, url_for
-from flask_security import login_required, logout_user
+from flask_security import logout_user
 
 
 @app.route('/')

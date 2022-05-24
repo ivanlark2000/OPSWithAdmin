@@ -5,13 +5,18 @@ name = "pypi"
 
 [packages]
 flask-security = "*"
-flask-admin = "*"
 flask-wtf = "*"
 flask-sqlalchemy = "*"
 email-validator = "*"
 flask-migrate = "*"
 flask = "*"
 python-dotenv = "*"
+flask-babelex = "*"
+markupsafe = "*"
+redis = "*"
+datetime = "*"
+flask-admin = "*"
+pillow = "*"
 
 [dev-packages]
 
