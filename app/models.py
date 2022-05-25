@@ -13,19 +13,22 @@ class Role(db.Model, RoleMixin):
     name = db.Column(db.String(80), unique=True)
     description = db.Column(db.String(255))
 
+    def __repr__(self):
+        return f'Role - {self.name}'
+
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(50))
+    username = db.Column(db.String(50), index=True, nullable=False)
     email = db.Column(db.String(255), unique=True)
-    password = db.Column(db.String(255))
+    password = db.Column(db.String(255), index=True, nullable=False)
     active = db.Column(db.Boolean())
     confirmed_at = db.Column(db.DateTime())
     roles = db.relationship('Role', secondary=roles_users,
                             backref=db.backref('users', lazy='dynamic'))
 
     def __repr__(self):
-        return '{}'.format(self.username)
+        return f'User - {self.username}'
 
 
 class Flat(db.Model):
@@ -33,19 +36,36 @@ class Flat(db.Model):
     address = db.Column(db.String(64), index=True, nullable=False)
     price = db.Column(db.Integer(), index=True, nullable=False)
     district = db.Column(db.String(64), index=True, nullable=False)
+    away_settlement = db.Column(db.Boolean(), index=True)
+    numbers_of_room = db.Column(db.Integer(), index=True)
+    type_of_room = db.Column(db.String(64))
+    total_space = db.Column(db.Float(5), index=True)
+    space_of_kitchen = db.Column(db.Float(5), index=True)
+    space_of_living = db.Column(db.Float(5), index=True)
+    furniture = db.Column(db.String(150))
+    technics = db.Column(db.String(150))
+    balcony_or_loggia = db.Column(db.String(150))
+    ceiling_height = db.Column(db.Float(5), index=True)
+    bathroom = db.Column(db.String(150))
+    widow = db.Column(db.String(150))
+    repair = db.Column(db.String(150))
+    floor = db.Column(db.Integer(), index=True, nullable=False)
+    description = db.Column(db.Text())
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    fotos = db.relationship('FotoFlat', backref='flat', lazy='dynamic')
+    image = db.relationship('Image', backref='image', lazy='dynamic')
     # Аргумент backref определяет имя поля, которое будет добавлено к объектам класса «много»
 
     def __repr__(self):
-        return '<Flat {}>'.format(self.address)
+        return f'Квартира по адресу {self.address}'
 
 
-class FotoFlat(db.Model):
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    url_pic = db.Column(db.String(200), nullable=False)
-    pic = db.Column(db.LargeBinary, nullable=False)
+class Image(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.Unicode(64))
+    path = db.Column(db.Unicode(128))
     flat_id = db.Column(db.Integer, db.ForeignKey('flat.id'))
 
-    def __repr__(self):
-        return '{}'.format(self.url_pic)
+
+
+
+

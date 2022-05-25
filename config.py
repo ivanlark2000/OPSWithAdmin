@@ -11,6 +11,7 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
                               'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    STATIC_URL = '/static/'
     # Flask-Security
     SECURITY_PASSWORD_SALT = os.environ.get('PASSWORD_SALT')
     SECURITY_PASSWORD_HASH = os.environ.get('PASSWORD_HASH')
