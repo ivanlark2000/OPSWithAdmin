@@ -2,7 +2,6 @@ import os
 import flask_admin
 from flask import Flask, url_for, request, session
 from flask_admin import helpers as admin_helpers
-from flask_admin.contrib.fileadmin import FileAdmin
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask_security import Security, SQLAlchemyUserDatastore
