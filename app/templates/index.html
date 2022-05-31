@@ -15,14 +15,21 @@
   </head>
   <body>
     <header>
-      <div class="center-block">
-        <img class="img-wrap" src="{{url_for('static', filename='img/img.png')}}">
-        <h1>ВЫ ИЩИТЕ - МЫ ПРЕДЛАГАЕМ</h1>
-      </div>
+      <div class="cotainer">
+        <div class="row justify-content-center">
+          <div class="col-12 text-center flex-grow">
+            <img class="img-fluid mw-100 " src="{{url_for('static', filename='img/img.png')}}">
+            <h1 class="text-center">ВЫ ИЩИТЕ - МЫ ПРЕДЛАГАЕМ</h1>
+          </div>
+        </div>
+        
+      </div>  
     </header> 
-    <div class="cotainer" id="main_content">
+    <div class="cotainer-fluid" id="main_content">
       <p>Main_content</p>
-    </div>
+      <div class="container">
+    </div>  
+    </div>  
     <footer>
       <div class="cotainer" id="footer">
         <div class="row g-4 justify-content-center">
@@ -30,20 +37,20 @@
           <div class="col-5 mt-5"><p class="text-center"></div>         
         </div>
         <div class="row justify-content-center">
-          <div class="col-5 mt-5"><p>О нас</div>
+          <div class="col-5 mt-5"><a href="#"><p>О нас</a></div>
           <div class="col-5 mt-5"><p class="text-center">SUBSCRIBE US</div>            
         </div>
-        <div class="row justify-content-center">
-          <div class="col-5"><p>Отзывы</div>
-          <div class="col-5"><p class="text-center"></div> 
+        <div class="row justify-content-center">  
+          <div class="col-5"><a href="#"><p>Отзывы</a></div>
+          <div class="col-5"><p class="text-center"></div>  
         </div>
         <div class="row justify-content-center">
-          <div class="col-5"><p>Контакты</div>
-          <div class="col-5"><p class="text-center"></div> 
+          <div class="col-5"><a href="#"><p>Контакты</a></div>
+          <div class="col-5"><p class="text-center"><a href="#"><img style="margin-top: -4rem; height: 120px; width: 250px" class="" src="{{ url_for('static', filename='img/watsapp.png') }}" alt="значек"></a><a href="#"><img style="margin-left: 5px; margin-top: -4rem; height: 100px; width: 100px" class="" src="{{ url_for('static', filename='img/teleg.png') }}" alt="значек"></a></div> 
         </div>
         <div class="row justify-content-center">
           <div class="col-5"><p>© 2021 Touché. All rights reserved.</div>
-          <div class="col-5"><p class="text-center">8-999-452-52-36</div> 
+          <div class="col-5"><a href="tel:+79999999999"><p class="text-center">8-999-452-52-36</a></div> 
         </div>
       </div>
     </footer>
