@@ -13,3 +13,7 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
+
+@app.route('/les')
+def les():
+    return render_template('_flatcard.html')

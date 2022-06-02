@@ -1,46 +1,39 @@
-body {
-	padding: 0 0;
-	font-family: 'Montserrat';
-	background: #D2D1CD;
-}
 a {
   color: white;
  }
 
 p {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 40px;
-	color: white;
+    font-family: 'Montserrat', sans-serif;
+	font-size: 0.8rem;
 }
 
 h1 {
-		font-family: 'Montserrat', sans-serif;
-		position: absolute;
-		margin-top: -38rem;
-		margin-left: 22rem;
-		font-size: 80px;
+	
+	
+}
+h2 {
+    font-family: 'Montserrat'
+    font-size: 1rem;
 }
 
-
 img {	
-			margin-right: auto;
-			margin-left: auto;
-			position: relative;
-			top: -2.15rem;
-			object-fit: cover;
-      width: 100%;
-      height: 100%
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	top: -2.5rem;
+	object-fit: cover;
+    width: 100%;
+    height: 100%
 }	
 
 @media (max-width: 1800px) {
     h1 {
     	text-align: left;
     	margin-top: -17rem;
-			margin-left: 10rem;
-      font-size: 50px;
+		margin-left: 10rem;
+        font-size: 50px;
     }
     p {
-	font-size: 25px;
 }
 
 }
@@ -51,11 +44,19 @@ img {
     	width: 45%;
     	text-align: left;
     	margin-top: -6rem;
-			margin-left: 3rem;
-			font-size: 15px;
+		margin-left: 3rem;
+		font-size: 15px;
     }
     p {
 	font-size: 14px;
+	}
+}
+
+img.logo2 {
+	margin-left: 1rem;
+	margin-top: -5rem;
+	max-height: 20%;
+	max-width: 20%;
 }
 }
 
@@ -63,18 +64,76 @@ img {
 	position: relative;
 	top: -3rem;
 	padding-top: 5rem;
-	height: 120rem;
-	background: linear-gradient(228.89deg, #CAC9C5 19.08%, #D2D1CD 41.89%, #E8E7E4 82.33%);
+	
 }
-
+footer {
+    position: relative;
+    height: 30rem;
+}
 #footer {
+    position: relative;
+    top: -4rem;
 	margin-right: auto;
 	margin-left: auto;
 	width: 100%;
-	height: 40rem;
-	background: linear-gradient(1.77deg, #000000 71.35%, rgba(0, 0, 0, 0) 124.62%)
+	
 }
 
 div > div {
 	margin-top: 1.1rem;
 }
+
+img.logo1 {
+	
+	
+}
+
+img.logo2 {
+	
+	
+}
+.justify-content-center div.col-md-5 {
+    
+}
+
+}
+
+}
+.col-md-5 p {
+    margin-top: -2rem;
+    display: inline;
+    font-size: 0.8rem;
+}
+
+.flatcard > div {
+    position: relative;
+    margin-top: -1.2rem;
+}
+img.flatfoto {
+    position: relative;
+    margin-top: 1rem;
+    }
+div.textflat {
+    position: relative;
+    margin-top: -1rem;
+    }
+
+
+}
+div.price-col {
+    margin-top: -1.3rem;
+    margin-left: 2.5rem;
+}
+@media (max-width: 414px) {
+    img.foto_flat {
+        width: 8rem;
+        height: 8rem;
+    }
+    h2 {
+        
+    }
+    p.price {
+        
+    }
+}
+

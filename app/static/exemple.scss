@@ -1,0 +1,25 @@
+$fz: 80px;
+$c1: yellow;
+$c2: aqua;
+
+.block {
+  padding: 60px;
+  font-size: $fz;
+  line-height: 60px;
+  .block_text {
+    font-size: $fz;
+    span {color: $c1;}
+  }
+}
+.link {
+  color: $c1;
+  text-decoration: underline;
+  font-size: $fz;
+  .block & {
+    font-size: $fz;
+  }
+  &:hover {
+    color: $c2;
+  }
+}
+
