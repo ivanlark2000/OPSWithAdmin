@@ -55,4 +55,5 @@ def get_locale():
         session['lang'] = request.args.get('lang')
     return session.get('lang', 'ru')
 
+
 from app import views

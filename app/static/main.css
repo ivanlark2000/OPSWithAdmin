@@ -1,15 +1,20 @@
 @font-face {
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   src: url("fonts/Montserrat-Regular.ttf");
   font-style: normal;
   font-weight: normal;
+}
+@font-face {
+  font-family: "Montserrat", sans-serif;
+  src: url("fonts/Montserrat-ExtraBold.ttf");
+  font-style: bold;
 }
 html {
   padding: 0;
   margin: 0;
 }
 
-h1 h2 p {
+h1 h2 {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -27,12 +32,6 @@ div.header h1 {
   font-style: normal;
   font-weight: 600;
   font-size: 48px;
-}
-
-div.main_content {
-  margin-top: -4.5rem;
-  height: 120rem;
-  background: linear-gradient(228.89deg, #CAC9C5 19.08%, #D2D1CD 41.89%, #E8E7E4 82.33%);
 }
 
 div.footer {
@@ -55,53 +54,140 @@ div.footer img.logo2 {
   max-width: 5%;
 }
 
-div.flat {
-  max-width: 60%;
-  background-color: yellow;
+div.main_content {
+  margin-top: -4.5rem;
+  background: #D4E0D9;
+  /*background: linear-gradient(228.89deg, #CAC9C5 19.08%, #D2D1CD 41.89%, #E8E7E4 82.33%);*/
 }
-div.flat .flatcard {
-  margin-top: 2rem;
-  margin-right: 2rem;
-  margin-left: 2rem;
-  width: 531px;
-  max-height: 600.36px;
-  background: #DEBF89;
+div.main_content div.flat {
+  padding-top: 5rem;
+  padding-bottom: 10rem;
+  max-width: 75%;
+}
+div.main_content div.flat .flatcard {
+  margin-top: 5rem;
+  margin-right: 3rem;
+  margin-left: 3rem;
+  max-width: 531px;
+  max-height: 650px;
+  background: #D9D4E0;
+  /*background: #DEBF89;*/
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 49px;
   transform: matrix(1, 0, 0, 1, 0, 0);
 }
-div.flat img.foto_flat {
-  max-width: 13rem;
-  max-height: 13rem;
+div.main_content div.flat img.foto_flat {
+  margin-left: 3rem;
+  margin-top: -0.5rem;
+  padding-bottom: 0.5rem;
+  width: auto;
+  height: 9rem;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 13px;
 }
-div.flat h2 {
-  margin-left: -1rem;
-  font-style: normal;
-  text-align: center;
-  margin-top: 0.5rem;
-  font-size: 1.8rem;
-  line-height: 45px;
-  color: #000000;
+div.main_content div.flat h2 {
+  color: #654592;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  font-weight: 550;
+  height: 60.92px;
+  bottom: 1257.08px;
 }
-div.flat p {
+div.main_content div.flat p {
+  color: #654592;
   font-size: 0.8rem;
   margin-bottom: 0rem;
 }
-div.flat p.price {
+div.main_content div.flat p.price {
+  margin-left: 8rem;
+  padding-left: 2rem;
   font-family: "Montserrat";
-  font-style: normal;
-  text-align: center;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 32px;
-  line-height: 39px;
-  color: #000000;
+  line-height: 40px;
 }
-div.flat button.btn {
+div.main_content div.flat button.btn {
   background: #7DB0BB;
   backdrop-filter: blur(40px);
   border-radius: 14px;
+}
+
+nav.page ul.pagination {
+  margin: 0 0;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 1700px) {
+  div.header h1 {
+    transform: translate(-15rem, -17rem);
+    font-style: normal;
+    text-align: left;
+    max-width: 800px;
+    font-weight: 600;
+    font-size: 40px;
+  }
+}
+@media (max-width: 1080px) {
+  div.header h1 {
+    transform: translate(-5rem, -10rem);
+    font-style: normal;
+    text-align: left;
+    max-width: 800px;
+    font-weight: 600;
+    font-size: 35px;
+  }
+}
+@media (max-width: 414px) {
+  div.header h1 {
+    transform: translate(1rem, -6rem);
+    font-style: normal;
+    text-align: left;
+    max-width: 300px;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  div.footer {
+    height: 17rem;
+  }
+
+  div.header img {
+    min-height: 10rem;
+  }
+
+  div.main_content {
+    margin-top: -7rem;
+  }
+
+  div.footer p {
+    font-size: 1rem;
+    max-width: 5rem;
+  }
+
+  div.flat h2 {
+    max-width: 200px;
+    font-size: 1.5rem;
+  }
+
+  div.main_content div.flat p {
+    margin-left: 2rem;
+    margin-right: 1rem;
+  }
+
+  div.main_content div.flat p.price {
+    margin-left: 3rem;
+    font-size: 1.2rem;
+  }
+
+  div.main_content div.flat img.foto_flat {
+    margin-left: 2rem;
+    max-width: 15rem;
+    max-height: 13rem;
+  }
+
+  div.main_content div.flat .flatcard {
+    min-width: 16rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

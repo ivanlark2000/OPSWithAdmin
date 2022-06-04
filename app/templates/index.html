@@ -1,5 +1,41 @@
 {% extends "base.html" %}
-{% block title %}Index{% endblock %}
-    {% block content %}
-<p>Main Content
-    {% endblock %}
+{% block title %}Главная страница{% endblock %}
+{% block content %}
+<div class="container flat">
+  <div class="row justify-content-center m-1">
+    {% for flat in flats %}
+    <div class="col-sm-5 h-100 flatcard">
+      <div class="row">
+      <div class="col-12 pb-2 "><h2>{{ flat.numbers_of_room }}-к. квартира, {{ flat.total_space }} м², {{ flat.floor }} эт.</h2></div>
+        <div class="row">
+          <div class="col-sm-6">
+             <img class="foto_flat" src="{{url_for('static', filename=flat.image[0])}}" alt="Квартира">
+          </div>
+          <div class="col-sm-6 textflat">
+            <p><b>{{flat.district}}, {{flat.address}}</b><br>
+            <p><b>Ремонт:</b>{{ flat.repair }}<br>
+            <p><b>Мебель:</b>{{ flat.furniture }}<br>
+            <p><b>Техника:</b>{{ flat.technics }}<br>
+            <button type="button" class="btn btn-warning stretched-link"><i>Узнать подробнее</i></button>
+          </div>
+          <div class="row  price-col">
+            <div class="col-12 mr-5 justify-content-center">
+              <p class="price">от {{ flat.price }} руб</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% if pages|length % 4 > 0 %}
+  <nav class="page" aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      {% for page in pages %}
+      <li class="page-item"><a class="page-link" href="{{url_for('other_pages', page=page)}}">{{ page }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}
+{% endblock %}

@@ -18,10 +18,10 @@ class Role(db.Model, RoleMixin):
 
 
 class User(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(50), index=True, nullable=False)
     email = db.Column(db.String(255), unique=True)
-    password = db.Column(db.String(255), index=True, nullable=False)
+    password = db.Column(db.String(500), index=True, nullable=False)
     active = db.Column(db.Boolean())
     confirmed_at = db.Column(db.DateTime())
     roles = db.relationship('Role', secondary=roles_users,
@@ -52,7 +52,7 @@ class Flat(db.Model):
     floor = db.Column(db.Integer(), index=True, nullable=False)
     description = db.Column(db.Text())
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    image = db.relationship('Image', backref='image', lazy='dynamic')
+    image = db.relationship('Image', backref='image')
     # Аргумент backref определяет имя поля, которое будет добавлено к объектам класса «много»
 
     def __repr__(self):
@@ -64,6 +64,9 @@ class Image(db.Model):
     name = db.Column(db.Unicode(64))
     path = db.Column(db.Unicode(128))
     flat_id = db.Column(db.Integer, db.ForeignKey('flat.id'))
+
+    def __repr__(self):
+        return f'ImageFlat/{self.path}'
 
 
 

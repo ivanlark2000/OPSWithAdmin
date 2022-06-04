@@ -1,5 +1,5 @@
 from app import app, db, user_datastore
-from app.models import User, Flat, Role
+from app.models import User, Flat, Role, Image
 
 
 @app.shell_context_processor
@@ -11,4 +11,5 @@ def make_shell_context():
         'Role': Role,
         'user_datastore': user_datastore,
         'Flat': Flat,
+        'Image': Image,
     }
