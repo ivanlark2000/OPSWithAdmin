@@ -12,8 +12,6 @@
 html {padding: 0;margin: 0;}
 h1 h2  {font-family: 'Montserrat', sans-serif;}
 
-a {text-decoration: none; color: white;}
-
 div.header {
 	img {
 		margin-top: -1rem;
@@ -29,6 +27,11 @@ div.header {
 div.footer {
 	height: 20rem;
 	background: linear-gradient(1.77deg, #000000 71.35%, rgba(0, 0, 0, 0) 124.62%);
+	div.row {
+	    a {
+	        color: white;
+	    }
+	}
 	p {
 		color: white;
 		font-size: 1.5rem;
@@ -46,6 +49,7 @@ div.footer {
 	}
 }
 div.main_content {
+    height:60rem;
 	margin-top: -4.5rem;
 	background: #D4E0D9;
 	/*background: linear-gradient(228.89deg, #CAC9C5 19.08%, #D2D1CD 41.89%, #E8E7E4 82.33%);*/
@@ -53,6 +57,11 @@ div.main_content {
         padding-top: 5rem;
         padding-bottom: 10rem;
         max-width: 75%;
+        a:hover {
+	    text-decoration: none;
+	    background: #b58feb;
+	    border-radius: 49px;
+	    }
         .flatcard {
             margin-top: 5rem;
             margin-right: 3rem;
@@ -102,7 +111,20 @@ div.main_content {
         }
     }
 }
-
+div.description_flat {
+    padding-top: 5rem;
+    img {
+        margin: 0 auto;
+        height: 28rem;
+        weight: 28rem;
+    }
+}
+div.error {
+    padding-top: 5rem;
+    a {
+        text-color: black;
+    }
+}
 nav.page {
     ul.pagination {
         margin: 0 0;

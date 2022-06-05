@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}500 error{% endblock %}
+{% block content %}
+<div class="container error">
+    <h2>Ошибка 500, на сервере идут профилактические работы<br>
+        попробуйте <a href="{{url_for('index')}}">перейти на главную страницу</a> позже</h2>
+</div>
+{% endblock %}
