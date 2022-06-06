@@ -6,11 +6,10 @@ from flask_security import logout_user
 
 @app.route('/')
 def index():
-    flats = Flat.query.limit(4).all()
+    flats = Flat.query.all()
     # делаем запрос к базе и получаем первые четыре квартиры
     pages = [i for i in range(1, (math.ceil(len(flats) / 4) + 1))]
     # определяем количество страниц
-    print(request.url)
     return render_template('index.html', flats=flats, pages=pages)
 
 
@@ -29,6 +28,21 @@ def other_pages(page):
 def flat(flat_id):
     flat = Flat.query.get(flat_id)
     return render_template('flat.html', flat=flat)
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
+@app.route('/kontakt')
+def kontakt():
+    return render_template('kontakt.html')
+
+
+@app.route('/reviews')
+def reviews():
+    return render_template('reviews.html')
 
 
 @app.route('/logout')

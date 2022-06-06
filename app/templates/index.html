@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container flat" id="flatcards">
   <div class="row justify-content-center m-1">
-    {% for flat in flats %}
+    {% for flat in flats[:4] %}
     <div class="col-sm-5 h-100 flatcard">
       <div class="row">
       <a href="{{ url_for('flat', flat_id=flat.id) }}#flatcard">
@@ -13,10 +13,11 @@
              <img class="foto_flat" src="{{url_for('static', filename=flat.image[0])}}" alt="Квартира">
           </div>
           <div class="col-sm-6 textflat">
-            <p><b>{{flat.district}}, {{flat.address}}</b><br>
-            <p><b>Ремонт:</b>{{ flat.repair }}<br>
-            <p><b>Мебель:</b>{{ flat.furniture }}<br>
-            <p><b>Техника:</b>{{ flat.technics }}<br>
+            <p><b>{{flat.district}} район</b><br>
+            <p><b>ул. {{flat.street}} д. {{flat.house}}</b><br>
+            <p><b>Ремонт:</b> {{ flat.repair }}<br>
+            <p><b>Мебель:</b> {{ flat.furniture }}<br>
+            <p><b>Техника:</b> {{ flat.technics }}<br>
             <button type="button" class="btn btn-warning stretched-link"><i>Узнать подробнее</i></button>
           </div>
           <div class="row  price-col">

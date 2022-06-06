@@ -33,7 +33,8 @@ class User(db.Model, UserMixin):
 
 class Flat(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    address = db.Column(db.String(64), index=True, nullable=False)
+    street = db.Column(db.String(64), index=True, nullable=False)
+    house = db.Column(db.Integer(), index=True, nullable=False)
     price = db.Column(db.Integer(), index=True, nullable=False)
     district = db.Column(db.String(64), index=True, nullable=False)
     away_settlement = db.Column(db.Boolean(), index=True)

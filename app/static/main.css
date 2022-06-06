@@ -58,10 +58,14 @@ div.main_content {
   background: #D4E0D9;
   /*background: linear-gradient(228.89deg, #CAC9C5 19.08%, #D2D1CD 41.89%, #E8E7E4 82.33%);*/
 }
+div.main_content div.info {
+  padding-top: 5rem;
+}
 div.main_content div.flat {
   padding-top: 5rem;
   padding-bottom: 10rem;
   max-width: 75%;
+  height: 57rem;
 }
 div.main_content div.flat a:hover {
   text-decoration: none;

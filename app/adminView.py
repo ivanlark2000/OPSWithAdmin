@@ -24,7 +24,7 @@ class MySuperUserModelView(ModelView):
 class MyAdminModelView(sqla.ModelView):
     column_exclude_list = ['password', 'image']
     # column_searchable_list = ['Address', ]
-    column_labels = dict(address='Адресс', price='Цена', district='Район', away_settlement='Удаленое заселение',
+    column_labels = dict(street='Улица', house='№ дома', price='Цена', district='Район', away_settlement='Удалённое заселение',
                          numbers_of_room='Количество комнат', type_of_room='Тип комнат', total_space='Общая площадь',
                          space_of_kitchen='Площадь кухни', space_of_living='Жилая площадь', furniture='Мебель',
                          technics='Техника', balcony_or_loggia='Балкон или лоджия', ceiling_height='Высота потолков',

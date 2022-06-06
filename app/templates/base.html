@@ -7,6 +7,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    {% block script %}{% endblock %}
     <script type="text/css" href="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}" rel="stylesheet"></script>
     <title>{% block title %}{% endblock %}</title>
   </head>
@@ -27,16 +28,16 @@
     <footer>
       <div class="cotainer footer">
         <div class="row justify-content-center">
-          <div class="col-5 mt-5"><a href="#"><p>О нас</a></div>
+          <div class="col-5 mt-5"><a href="{{ url_for('about') }}#about"><p>О нас</a></div>
           <div class="col-5 mt-5"><p class="text-center">SUBSCRIBE US</div>            
         </div>
         <div class="row justify-content-center">  
-          <div class="col-5"><a href="#"><p>Отзывы</a></div>
+          <div class="col-5"><a href="{{ url_for('reviews') }}#reviews"><p>Отзывы</a></div>
           <div class="col-5"><p class="text-center"></div>  
         </div>
         <div class="row justify-content-center">
-          <div class="col-5"><a href="#"><p>Контакты</a></div>
-          <div class="col-5"><p class="text-center"><a href="#"><img class="logo1 img-fluid" src="{{ url_for('static', filename='img/watsapp.png') }}" alt="значек"></a><a href="#"><img class="logo2 img-fluid" src="{{ url_for('static', filename='img/teleg.png') }}" alt="значек"></a></div> 
+          <div class="col-5"><a href="{{ url_for('kontakt') }}#kontakt"><p>Контакты</a></div>
+          <div class="col-5"><p class="text-center"><a href=""><img class="logo1 img-fluid" src="{{ url_for('static', filename='img/watsapp.png') }}" alt="значек"></a><a href="#"><img class="logo2 img-fluid" src="{{ url_for('static', filename='img/teleg.png') }}" alt="значек"></a></div>
         </div>
         <div class="row justify-content-center">
           <div class="col-5"><p>© 2021 Touché. All rights reserved.</div>

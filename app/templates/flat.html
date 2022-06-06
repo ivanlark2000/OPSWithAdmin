@@ -1,9 +1,30 @@
 {% extends "base.html" %}
-{% block title %}{{ flat.address }}{% endblock %}
+{% block script %}
+<script type="text/javascript">
+        // Создает обработчик события window.onLoad
+        YMaps.jQuery(function () {
+            // Создает экземпляр карты и привязывает его к созданному контейнеру
+            var map = new YMaps.Map(YMaps.jQuery("#YMapsID")[0]);
+
+            // Устанавливает начальные параметры отображения карты: центр карты и коэффициент масштабирования
+            map.setCenter(new YMaps.GeoPoint(20.505333, 54.750139,), 15);
+            // Создает метку в центре Москвы
+            var placemark = new YMaps.Placemark(new YMaps.GeoPoint(20.505333, 54.750139,));
+
+            // Устанавливает содержимое балуна
+            placemark.name = "Тут был роман";
+            placemark.description = "Столица Российской Федерации";
+
+            // Добавляет метку на карту
+            map.addOverlay(placemark);
+        })
+</script>
+{% endblock %}
+{% block title %}ул. {{ flat.street }} д. {{ flat.house }}{% endblock %}
 {% block content %}
 <div class="container description_flat" id="flatcard">
   <div class="row">
-    <div class="col-6 justify-content-center">
+    <div class="col-4 justify-content-center">
       <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -25,8 +46,28 @@
   </button>
 </div>
     </div>
-    <div class="col-6">
-      <h1>Страница квартиры</h1>
+    <div class="col-4">
+      <p><b>Адресс:</b> ул. {{ flat.street }} д. {{ flat.house }}
+      <p><b>Цена:</b> {{ flat.price }} руб
+      <p><b>Район:</b> {{ flat.district }}
+      <p><b>Удалённое заселение:</b> {{ flat.away_settlement }}
+      <p><b>Количество комнат:</b> {{ flat.numbers_of_room }}
+      <p><b>Тип комнат:</b> {{ flat.type_of_room }}
+      <p><b>Общая площадь:</b> {{ flat.total_space }} m<sup>2</sup>
+      <p><b>Площадь кухни:</b> {{ flat.space_of_kitchen }} m<sup>2</sup>
+      <p><b>Жилая площадь:</b> {{ flat.space_of_living }} m<sup>2</sup>
+      <p><b>Мебель:</b> {{ flat.furniture }}
+      <p><b>Техника:</b> {{ flat.technics }}
+      <p><b>Балкон или лоджия:</b> {{ flat.balcony_or_loggia }}
+      <p><b>Высота потолков:</b> {{ flat.ceiling_height }}
+      <p><b>Сан узел:</b> {{ flat.bathroom }}
+      <p><b>Окна:</b> {{ flat.widow }}
+      <p><b>Этаж:</b> {{ flat.floor }}
+      <p><b>Ремонт:</b> {{ flat.repair }}
+      <p><b>Описание:</b> {{ flat.description }}
+    </div>
+    <div class="col-4">
+      <div id="YMapsID" style="width:600px;height:400px"></div>
     </div>
   </div>
 </div>
