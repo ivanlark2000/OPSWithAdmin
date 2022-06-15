@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Montserrat", sans-serif;
   src: url("fonts/Montserrat-Regular.ttf");
@@ -40,16 +41,15 @@ div.footer p {
   color: white;
   font-size: 1.5rem;
 }
-div.footer img.logo1 {
-  margin-top: -4.5rem;
-  max-height: 7%;
-  max-width: 13%;
-}
-div.footer img.logo2 {
+div.footer img.logo {
   margin-left: 0.8rem;
   margin-top: -4.8rem;
-  max-height: 5%;
-  max-width: 5%;
+  max-height: 4rem;
+  max-width: 4rem;
+}
+div.footer img.logo:hover {
+  transform: scale(1.7);
+  /* Увеличиваем масштаб */
 }
 
 div.main_content {
@@ -71,6 +71,10 @@ div.main_content div.flat a:hover {
   text-decoration: none;
   background: #b58feb;
   border-radius: 49px;
+  transition: 0.7s;
+  /* Время эффекта */
+  transform: scale(1.2);
+  /* Увеличиваем масштаб */
 }
 div.main_content div.flat .flatcard {
   margin-top: 5rem;

@@ -17,6 +17,11 @@ redis = "*"
 datetime = "*"
 flask-admin = "*"
 pillow = "*"
+beautifulsoup4 = "*"
+requests = "*"
+selenium = "*"
+webdriver-manager = "*"
+fake-useragent = "*"
 
 [dev-packages]
 

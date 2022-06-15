@@ -4,6 +4,11 @@ from flask import render_template, redirect, url_for, request
 from flask_security import logout_user
 
 
+@app.route('/test')
+def test():
+    return render_template('test.html')
+
+
 @app.route('/')
 def index():
     flats = Flat.query.all()

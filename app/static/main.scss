@@ -31,22 +31,22 @@ div.footer {
 	    a {
 	        color: white;
 	    }
-	}
-	p {
-		color: white;
-		font-size: 1.5rem;
-	}
-	img.logo1 {
-		margin-top: -4.5rem;
-		max-height: 7%;
-		max-width: 13%;
-	}
-	img.logo2 {
-		margin-left: 0.8rem;
-		margin-top: -4.8rem;
-		max-height: 5%;
-		max-width: 5%;
-	}
+        }
+        p {
+            color: white;
+            font-size: 1.5rem;
+        }
+        img.logo {
+            margin-left: 0.8rem;
+            margin-top: -4.8rem;
+            max-height: 4rem;
+            max-width: 4rem;
+            &:hover {
+                transform: scale(1.7); /* Увеличиваем масштаб */
+            }
+        }
+
+
 }
 div.main_content {
     height:60rem;
@@ -61,10 +61,13 @@ div.main_content {
         padding-bottom: 10rem;
         max-width: 75%;
         height: 57rem;
+
         a:hover {
 	    text-decoration: none;
 	    background: #b58feb;
 	    border-radius: 49px;
+	    transition: 0.7s; /* Время эффекта */
+	    transform: scale(1.2); /* Увеличиваем масштаб */
 	    }
         .flatcard {
             margin-top: 5rem;

@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Увеличение изображения</title>
+  <style>
+   .scale {
+    transition: 0.5s; /* Время эффекта */
+   }
+   .scale:hover {
+   transform: scale(1.2); /* Увеличиваем масштаб */
+   }
+  </style>
+ </head>
+ <body>
+  <p>
+   <img src="{{url_for('static', filename='img/viber.png')}}" alt="" class="scale">
+   <img src="{{url_for('static', filename='img/teleg.png')}}" alt="" class="scale">
+   <img src="{{url_for('static',filename='img/watsapp.png')}}" alt="" class="scale">
+  </p>
+ </body>
+</html>
